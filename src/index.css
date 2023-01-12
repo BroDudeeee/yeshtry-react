@@ -31,7 +31,7 @@ main {
 .shadow {
   background-color: black;
   opacity: 0.9;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 20;
