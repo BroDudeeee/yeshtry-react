@@ -19,7 +19,7 @@ const Sidebar = ({ closeTheSidebar, cartCount, sidebar, setCartCount }) => {
         <div>
           <div className="cart-product">
             <img
-              src="http://localhost:3000/static/media/yeshtery2.945b2681fddd386ad9c8.jpg"
+              src="https://api.yeshtery.com/v1/yeshtery/files/31/bb6a28f6-b359-4b02-b468-826bd29e23a4.jpeg?height=500"
               alt="product"
             />
             <div>
