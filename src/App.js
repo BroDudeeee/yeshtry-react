@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Header from "./components/Header";
+import ProductDetails from "./components/ProductDetails";
+import Sidebar from "./components/Sidebar";
+import Slideshow from "./components/Slideshow";
 
 function App() {
+  const [sidebar, setSidebar] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header openSidebar={setSidebar} cartCount={cartCount} />
+      <main>
+        <Slideshow />
+        <ProductDetails setCartCount={setCartCount} cartCount={cartCount} />
+      </main>
+
+      <Sidebar
+        closeTheSidebar={setSidebar}
+        cartCount={cartCount}
+        sidebar={sidebar}
+        setCartCount={setCartCount}
+      />
+
+      {sidebar && (
+        <div className="shadow" onClick={() => setSidebar(false)}></div>
+      )}
     </div>
   );
 }
